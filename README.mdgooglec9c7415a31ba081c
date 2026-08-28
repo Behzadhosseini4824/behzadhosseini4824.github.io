@@ -1,48 +1,46 @@
- <!DOCTYPE html>
+index.html
+profile.jpg
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>بهزاد حسینی | معلم و فعال اجتماعی شهر شاهو</title>
+<title>بهزاد حسینی | فرهنگی و فعال اجتماعی شهر شاهو</title>
 
-<meta name="description" content="وب‌سایت رسمی بهزاد حسینی؛ معلم، فعال اجتماعی و عضو شورای اسلامی شهر شاهو در دوره ششم.">
-<meta name="keywords" content="بهزاد حسینی, شاهو, شورای شهر شاهو, معلم, فعال اجتماعی">
+<meta name="description"
+content="وب‌سایت رسمی و شخصی بهزاد حسینی، فرهنگی، مدیر آموزشی و فعال اجتماعی شهر شاهو">
+
 <meta name="author" content="بهزاد حسینی">
 
-<meta property="og:title" content="بهزاد حسینی | صفحه رسمی">
-<meta property="og:description" content="معرفی، سوابق، فعالیت‌ها و برنامه‌های بهزاد حسینی">
-<meta property="og:type" content="website">
+<meta name="theme-color" content="#08111f">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
 
-:root{
-    --primary:#0b5e55;
-    --primary-dark:#06463f;
-    --gold:#d4af37;
-    --gold-light:#f3d675;
-    --dark:#071b19;
-    --text:#263a38;
-    --muted:#6c7d7a;
-    --bg:#f5f8f7;
-    --white:#ffffff;
-    --border:#e3ebe9;
-    --shadow:0 15px 45px rgba(7,38,34,.10);
-}
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Vazirmatn',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.9;
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    background:#f4f7fb;
+    color:#172235;
+    line-height:2;
+    overflow-x:hidden;
 }
 
 a{
@@ -50,1328 +48,2546 @@ a{
     color:inherit;
 }
 
+img{
+    max-width:100%;
+}
+
 .container{
-    width:min(1150px,92%);
+    width:92%;
+    max-width:1180px;
     margin:auto;
 }
 
-/* HEADER */
+
+/* =====================================================
+   SCROLL BAR
+===================================================== */
+
+::-webkit-scrollbar{
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+    background:#07101d;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#c9a45e;
+    border-radius:20px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 header{
     position:fixed;
     top:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(255,255,255,.88);
+    right:0;
+    left:0;
+
+    height:76px;
+
+    z-index:9999;
+
+    background:rgba(5,13,26,.90);
+
     backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(0,0,0,.06);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.09);
+
+    transition:.3s;
+}
+
+header.scrolled{
+    background:rgba(4,10,20,.98);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
 }
 
 .nav{
-    height:78px;
+    height:76px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-weight:900;
-    color:var(--primary);
-    font-size:20px;
+    color:#fff;
+
+    font-size:21px;
+    font-weight:bold;
+
+    white-space:nowrap;
 }
 
-.logo-icon{
-    width:44px;
-    height:44px;
-    border-radius:14px;
-    background:linear-gradient(135deg,var(--primary),#118678);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 8px 20px rgba(11,94,85,.25);
+.logo span{
+    color:#d8b36a;
 }
 
 .menu{
     display:flex;
     align-items:center;
-    gap:28px;
+    gap:24px;
+
+    color:#d8e1ee;
+
+    font-size:14px;
 }
 
 .menu a{
-    font-size:14px;
-    font-weight:600;
-    color:#334946;
+    position:relative;
+    transition:.3s;
+}
+
+.menu a:after{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:#d8b36a;
+
     transition:.3s;
 }
 
 .menu a:hover{
-    color:var(--primary);
+    color:#e0bc76;
 }
 
-.nav-btn{
-    padding:10px 18px;
-    border-radius:30px;
-    background:var(--primary);
-    color:#fff !important;
+.menu a:hover:after{
+    width:100%;
 }
 
-.mobile-btn{
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.menu-btn{
     display:none;
-    border:0;
-    background:transparent;
-    font-size:27px;
+
+    width:45px;
+    height:45px;
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:12px;
+
+    background:rgba(255,255,255,.06);
+
+    color:#fff;
+
+    font-size:23px;
+
     cursor:pointer;
 }
 
-/* HERO */
+
+/* =====================================================
+   HERO
+===================================================== */
+
 .hero{
-    min-height:760px;
-    padding-top:140px;
+    min-height:100vh;
+
+    padding-top:76px;
+
+    position:relative;
+
     display:flex;
     align-items:center;
-    position:relative;
+
+    color:#fff;
+
     overflow:hidden;
+
     background:
-      radial-gradient(circle at 10% 20%,rgba(212,175,55,.15),transparent 25%),
-      radial-gradient(circle at 90% 10%,rgba(11,94,85,.13),transparent 30%),
-      linear-gradient(180deg,#fafffe,#eef6f4);
+    radial-gradient(
+        circle at 80% 20%,
+        #29476d 0%,
+        #13233a 34%,
+        #08111f 72%,
+        #040a13 100%
+    );
+}
+
+.hero:before{
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    left:-260px;
+    bottom:-330px;
+
+    border:
+    1px solid rgba(216,179,106,.18);
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 0 80px rgba(216,179,106,.025),
+    0 0 0 160px rgba(216,179,106,.018);
+}
+
+.hero:after{
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    right:-100px;
+    top:110px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(216,179,106,.13),
+        transparent 70%
+    );
+
+    border-radius:50%;
 }
 
 .hero-grid{
+    position:relative;
+    z-index:2;
+
     display:grid;
-    grid-template-columns:1.05fr .95fr;
+
+    grid-template-columns:
+    1.15fr .85fr;
+
     gap:70px;
+
     align-items:center;
+
+    padding:90px 0;
+}
+
+.hero-content{
+    animation:
+    fadeUp .9s ease both;
 }
 
 .badge{
     display:inline-flex;
     align-items:center;
+
     gap:8px;
-    background:#e4f2ef;
-    color:var(--primary);
-    border:1px solid #cfe7e2;
-    padding:8px 15px;
-    border-radius:30px;
+
+    padding:6px 17px;
+
+    border:
+    1px solid rgba(216,179,106,.55);
+
+    border-radius:50px;
+
+    color:#e2c27e;
+
     font-size:13px;
-    font-weight:700;
+
+    background:
+    rgba(216,179,106,.05);
+
     margin-bottom:22px;
 }
 
+.badge:before{
+    content:"●";
+
+    font-size:8px;
+}
+
 .hero h1{
-    font-size:clamp(38px,5vw,70px);
-    line-height:1.2;
-    color:var(--dark);
-    font-weight:900;
-    margin-bottom:18px;
+    font-size:
+    clamp(45px,7vw,82px);
+
+    line-height:1.15;
+
+    margin-bottom:10px;
+
+    letter-spacing:-2px;
 }
 
 .hero h1 span{
-    color:var(--primary);
+    color:#d8b36a;
+}
+
+.hero h2{
+    color:#dce6f3;
+
+    font-size:21px;
+
+    line-height:1.8;
+
+    font-weight:500;
+
+    margin-bottom:20px;
 }
 
 .hero p{
-    font-size:17px;
-    color:#63736f;
-    max-width:680px;
-    margin-bottom:30px;
+    color:#b8c5d6;
+
+    max-width:690px;
+
+    font-size:16px;
 }
 
-.hero-buttons{
+.buttons{
+    margin-top:30px;
+
     display:flex;
-    gap:14px;
     flex-wrap:wrap;
+
+    gap:12px;
 }
 
 .btn{
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
-    gap:8px;
-    padding:13px 23px;
+
+    min-height:48px;
+
+    padding:10px 23px;
+
     border-radius:13px;
-    font-size:14px;
-    font-weight:700;
+
+    background:#d8b36a;
+
+    color:#101825;
+
+    font-weight:bold;
+
     transition:.3s;
-    cursor:pointer;
+
+    border:1px solid #d8b36a;
 }
 
-.btn-primary{
-    background:var(--primary);
-    color:#fff;
-    box-shadow:0 10px 25px rgba(11,94,85,.2);
-}
-
-.btn-primary:hover{
+.btn:hover{
     transform:translateY(-3px);
-    background:var(--primary-dark);
+
+    box-shadow:
+    0 12px 30px rgba(216,179,106,.25);
 }
 
 .btn-outline{
-    border:1px solid #cfdcd9;
-    background:#fff;
-    color:var(--primary);
+    background:transparent;
+
+    color:#fff;
+
+    border-color:#53657f;
 }
 
 .btn-outline:hover{
-    transform:translateY(-3px);
-    box-shadow:var(--shadow);
+    background:#fff;
+    color:#101825;
 }
 
-.hero-card{
-    position:relative;
-    height:510px;
-    border-radius:35px;
-    background:linear-gradient(145deg,#0b5e55,#083d38);
-    overflow:hidden;
-    box-shadow:0 30px 70px rgba(4,56,50,.25);
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-wrap{
     display:flex;
-    align-items:flex-end;
     justify-content:center;
+
+    animation:
+    fadeUp 1.1s .15s ease both;
 }
 
-.hero-card::before{
-    content:"";
-    position:absolute;
-    width:350px;
-    height:350px;
-    border-radius:50%;
-    border:1px solid rgba(255,255,255,.15);
-    top:-100px;
-    right:-80px;
-}
+.profile{
+    width:min(100%,410px);
 
-.hero-card::after{
-    content:"";
-    position:absolute;
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    border:1px solid rgba(212,175,55,.2);
-    bottom:-80px;
-    left:-70px;
-}
+    min-height:500px;
 
-.profile-placeholder{
-    width:280px;
-    height:380px;
-    border-radius:170px 170px 35px 35px;
-    background:linear-gradient(160deg,#dbe9e6,#fff);
+    padding:16px;
+
+    border-radius:34px;
+
     position:relative;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,.025)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 35px 90px rgba(0,0,0,.45);
+
+    overflow:hidden;
+}
+
+.profile:before{
+    content:"";
+
+    position:absolute;
+
+    inset:9px;
+
+    border:
+    1px solid rgba(216,179,106,.28);
+
+    border-radius:27px;
+
+    pointer-events:none;
+
     z-index:2;
-    display:flex;
+}
+
+.profile img{
+    width:100%;
+
+    height:465px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:25px;
+
+    border:
+    3px solid rgba(216,179,106,.65);
+}
+
+.profile-fallback{
+    width:100%;
+    height:465px;
+
+    border-radius:25px;
+
+    display:none;
+
     align-items:center;
     justify-content:center;
-    color:var(--primary);
-    font-size:75px;
-    font-weight:900;
-    box-shadow:0 25px 50px rgba(0,0,0,.18);
+
+    text-align:center;
+
+    color:#dce5f1;
+
+    background:
+    linear-gradient(
+        145deg,
+        #1c3452,
+        #091322
+    );
+
+    padding:30px;
 }
 
-.hero-info{
-    position:absolute;
-    z-index:4;
-    bottom:25px;
-    right:25px;
-    left:25px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.18);
-    padding:17px 20px;
-    border-radius:18px;
-    color:#fff;
-}
 
-.hero-info strong{
-    display:block;
-    font-size:19px;
-}
+/* =====================================================
+   SECTION
+===================================================== */
 
-.hero-info small{
-    color:#d5e7e3;
-}
-
-/* SECTIONS */
 section{
     padding:100px 0;
 }
 
-.section-head{
+.section-title{
     text-align:center;
-    max-width:720px;
-    margin:0 auto 55px;
+
+    margin-bottom:55px;
 }
 
-.section-head .mini{
-    color:var(--gold);
-    font-weight:800;
+.eyebrow{
+    color:#aa7830;
+
     font-size:13px;
-    margin-bottom:8px;
+
+    font-weight:bold;
+
+    letter-spacing:.3px;
 }
 
-.section-head h2{
+.section-title h2{
     font-size:36px;
-    color:var(--dark);
-    margin-bottom:12px;
+
+    line-height:1.4;
+
+    margin:
+    5px 0 10px;
 }
 
-.section-head p{
-    color:var(--muted);
+.section-title p{
+    max-width:750px;
+
+    margin:auto;
+
+    color:#68758a;
+
+    font-size:15px;
 }
 
-/* ABOUT */
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+    background:#fff;
+}
+
 .about-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:35px;
+
+    grid-template-columns:
+    .72fr 1.28fr;
+
+    gap:50px;
+
+    align-items:start;
 }
 
-.card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:25px;
-    padding:32px;
-    box-shadow:var(--shadow);
+.info-box{
+    background:
+    linear-gradient(
+        145deg,
+        #101e33,
+        #091322
+    );
+
+    color:#fff;
+
+    padding:30px;
+
+    border-radius:26px;
+
+    box-shadow:
+    0 20px 50px rgba(10,22,40,.14);
 }
 
-.card h3{
-    color:var(--primary);
-    margin-bottom:18px;
-    font-size:21px;
+.info{
+    padding:15px 0;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.09);
 }
 
-.info-list{
-    display:grid;
-    gap:15px;
-}
-
-.info-item{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    padding-bottom:13px;
-    border-bottom:1px dashed #dce5e3;
-}
-
-.info-item:last-child{
+.info:last-child{
     border-bottom:0;
 }
 
-.info-item span:first-child{
-    color:var(--muted);
+.info strong{
+    display:block;
+
+    color:#dfbb76;
+
+    margin-bottom:2px;
 }
 
-.info-item strong{
-    color:var(--dark);
+.info span{
+    color:#c5d0df;
+
+    font-size:14px;
 }
 
-/* STATS */
+.text p{
+    color:#536075;
+
+    margin-bottom:18px;
+
+    font-size:15px;
+}
+
+.highlight{
+    padding:20px 23px;
+
+    margin-top:25px;
+
+    border-right:
+    4px solid #d8b36a;
+
+    background:#f7f4ed;
+
+    border-radius:12px;
+
+    color:#4d5869;
+
+    font-weight:500;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
 .stats{
-    background:var(--dark);
-    color:#fff;
-    padding:65px 0;
+    background:#f4f7fb;
 }
 
 .stats-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
 }
 
 .stat{
     text-align:center;
-    padding:20px;
+
+    padding:30px 18px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    border:
+    1px solid #e4e9f0;
+
+    transition:.3s;
 }
 
-.stat .number{
-    font-size:42px;
-    font-weight:900;
-    color:var(--gold-light);
+.stat:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 18px 40px rgba(25,35,55,.08);
 }
 
-.stat p{
-    color:#b7cbc7;
+.stat-number{
+    font-size:35px;
+
+    font-weight:bold;
+
+    color:#b2833e;
+}
+
+.stat-title{
+    color:#5d697b;
+
     font-size:14px;
 }
 
-/* TIMELINE */
+
+/* =====================================================
+   CAREER
+===================================================== */
+
 .timeline{
-    position:relative;
     max-width:900px;
+
     margin:auto;
+
+    position:relative;
+
+    display:grid;
+
+    gap:18px;
 }
 
-.timeline::before{
+.timeline:before{
     content:"";
+
     position:absolute;
-    right:20px;
-    top:0;
-    bottom:0;
+
+    top:10px;
+    bottom:10px;
+
+    right:19px;
+
     width:2px;
-    background:#d7e4e1;
+
+    background:#e0e5ec;
 }
 
 .timeline-item{
     position:relative;
-    padding-right:65px;
-    margin-bottom:35px;
-}
 
-.timeline-dot{
-    position:absolute;
-    right:9px;
-    top:8px;
-    width:24px;
-    height:24px;
-    border-radius:50%;
-    background:var(--gold);
-    border:5px solid #edf5f3;
-}
+    padding:
+    25px
+    55px
+    25px
+    25px;
 
-.timeline-box{
     background:#fff;
-    padding:25px;
-    border-radius:20px;
-    border:1px solid var(--border);
-    box-shadow:var(--shadow);
-}
 
-.timeline-box span{
-    color:var(--gold);
-    font-size:13px;
-    font-weight:800;
-}
+    border-radius:21px;
 
-.timeline-box h3{
-    margin:5px 0 8px;
-    color:var(--dark);
-}
+    border:
+    1px solid #e2e7ee;
 
-/* FEATURES */
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
+    box-shadow:
+    0 8px 30px rgba(20,32,55,.045);
 
-.feature{
-    background:#fff;
-    padding:30px;
-    border-radius:22px;
-    border:1px solid var(--border);
     transition:.3s;
 }
 
-.feature:hover{
-    transform:translateY(-7px);
-    box-shadow:var(--shadow);
+.timeline-item:before{
+    content:"";
+
+    position:absolute;
+
+    right:10px;
+    top:31px;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#d8b36a;
+
+    border:
+    4px solid #fff;
+
+    box-shadow:
+    0 0 0 2px #d8b36a;
 }
 
-.icon{
-    width:54px;
-    height:54px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:16px;
-    background:#e6f2ef;
-    color:var(--primary);
-    font-size:25px;
-    margin-bottom:18px;
+.timeline-item:hover{
+    transform:translateX(-5px);
+
+    box-shadow:
+    0 16px 35px rgba(20,32,55,.08);
 }
 
-.feature h3{
-    color:var(--dark);
-    margin-bottom:8px;
+.timeline-item h3{
+    font-size:19px;
+
+    margin-bottom:5px;
+
+    color:#1b2739;
 }
 
-/* PROJECTS */
+.timeline-item p{
+    color:#667388;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
 .projects{
+    background:#edf2f7;
+}
+
+.project-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
 }
 
 .project{
-    background:#fff;
-    border-radius:24px;
+    position:relative;
+
     overflow:hidden;
-    border:1px solid var(--border);
-    box-shadow:var(--shadow);
+
+    background:#fff;
+
+    border-radius:23px;
+
+    padding:28px;
+
+    border:
+    1px solid #e0e6ee;
+
+    transition:.35s;
 }
 
-.project-img{
-    height:190px;
+.project:before{
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    left:-40px;
+    bottom:-40px;
+
+    border-radius:50%;
+
     background:
-      linear-gradient(135deg,rgba(11,94,85,.9),rgba(212,175,55,.45)),
-      linear-gradient(45deg,#d8e7e3,#fff);
+    rgba(216,179,106,.08);
+}
+
+.project:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 20px 45px rgba(20,30,50,.10);
+}
+
+.icon{
+    width:58px;
+    height:58px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    border-radius:17px;
+
+    background:#f5efe3;
+
+    font-size:29px;
+
+    margin-bottom:16px;
+}
+
+.project h3{
+    font-size:18px;
+
+    margin-bottom:7px;
+}
+
+.project p{
+    color:#667388;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote{
+    position:relative;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0b1729,
+        #142a45
+    );
+
     color:#fff;
-    font-size:45px;
+
+    text-align:center;
+
+    overflow:hidden;
 }
 
-.project-content{
-    padding:23px;
+.quote:before{
+    content:"“";
+
+    position:absolute;
+
+    font-family:Georgia,serif;
+
+    font-size:240px;
+
+    line-height:1;
+
+    color:rgba(216,179,106,.08);
+
+    top:-20px;
+
+    right:7%;
 }
 
-.project-content h3{
-    color:var(--dark);
+.quote blockquote{
+    position:relative;
+    z-index:2;
+
+    max-width:880px;
+
+    margin:auto;
+
+    font-size:27px;
+
+    line-height:2;
+
+    font-weight:bold;
+}
+
+.quote small{
+    display:block;
+
+    color:#bdc9d9;
+
+    margin-top:20px;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   YOUTH
+===================================================== */
+
+.youth{
+    background:#fff;
+}
+
+.two-column{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:25px;
+}
+
+.list-box{
+    background:#f5f7fa;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    border:1px solid #e5eaf0;
+}
+
+.list-box li{
+    list-style:none;
+
+    padding:12px 0;
+
+    border-bottom:
+    1px solid #e1e6ed;
+
+    color:#435066;
+}
+
+.list-box li:last-child{
+    border-bottom:0;
+}
+
+.list-box li:before{
+    content:"✓";
+
+    color:#b2833e;
+
+    font-weight:bold;
+
+    margin-left:9px;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery{
+    background:#edf2f7;
+}
+
+.gallery-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:15px;
+}
+
+.gallery-item{
+    height:210px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:18px;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        145deg,
+        #162943,
+        #667892
+    );
+
+    transition:.35s;
+}
+
+.gallery-item:hover{
+    transform:scale(1.025);
+
+    box-shadow:
+    0 18px 35px rgba(20,30,50,.15);
+}
+
+.gallery-item span{
+    position:relative;
+    z-index:2;
+}
+
+.gallery-item:after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        transparent 20%,
+        rgba(0,0,0,.75)
+    );
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+    background:#fff;
+}
+
+.contact-box{
+    max-width:900px;
+
+    margin:auto;
+
+    padding:45px 30px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0d1b30,
+        #172d49
+    );
+
+    box-shadow:
+    0 25px 60px rgba(8,20,38,.18);
+}
+
+.contact-box h3{
+    font-size:27px;
+
     margin-bottom:8px;
 }
 
-.project-content p{
-    color:var(--muted);
+.contact-box p{
+    color:#c2cddd;
+
+    max-width:650px;
+
+    margin:
+    8px auto 25px;
+}
+
+.contact-links{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:25px;
+}
+
+.contact-link{
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.14);
+
+    background:rgba(255,255,255,.05);
+
+    color:#dbe4ef;
+
     font-size:14px;
 }
 
-/* NEWS */
-.news{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
 
-.news-card{
-    background:#fff;
-    border-radius:22px;
-    padding:25px;
-    border:1px solid var(--border);
-}
+/* =====================================================
+   FOOTER
+===================================================== */
 
-.news-date{
-    font-size:12px;
-    color:var(--gold);
-    font-weight:800;
-}
-
-.news-card h3{
-    color:var(--dark);
-    margin:10px 0;
-}
-
-.news-card p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* CONTACT */
-.contact{
-    background:#eaf3f1;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:30px;
-}
-
-.contact-list{
-    display:grid;
-    gap:15px;
-    margin-top:20px;
-}
-
-.contact-item{
-    background:#fff;
-    padding:17px;
-    border-radius:15px;
-    border:1px solid var(--border);
-}
-
-.contact-item strong{
-    display:block;
-    color:var(--primary);
-}
-
-.contact-item span{
-    font-size:14px;
-    color:var(--muted);
-}
-
-.form{
-    background:#fff;
-    padding:30px;
-    border-radius:25px;
-    border:1px solid var(--border);
-}
-
-.form-group{
-    margin-bottom:15px;
-}
-
-.form label{
-    display:block;
-    font-size:13px;
-    margin-bottom:6px;
-    font-weight:700;
-}
-
-.form input,
-.form textarea{
-    width:100%;
-    border:1px solid #d9e4e1;
-    border-radius:13px;
-    padding:13px;
-    font-family:inherit;
-    outline:none;
-}
-
-.form textarea{
-    min-height:130px;
-    resize:vertical;
-}
-
-.form input:focus,
-.form textarea:focus{
-    border-color:var(--primary);
-}
-
-/* FOOTER */
 footer{
-    background:#061614;
-    color:#fff;
-    padding:55px 0 25px;
-}
+    background:#050b14;
 
-.footer-grid{
-    display:grid;
-    grid-template-columns:1.2fr .8fr .8fr;
-    gap:35px;
-}
+    color:#aeb9c9;
 
-footer h3{
-    margin-bottom:15px;
-}
-
-footer p,
-footer a{
-    color:#a8bfbb;
-    font-size:14px;
-}
-
-.footer-links{
-    display:grid;
-    gap:8px;
-}
-
-.copyright{
-    border-top:1px solid rgba(255,255,255,.1);
-    margin-top:40px;
-    padding-top:20px;
     text-align:center;
-    color:#78908c;
-    font-size:12px;
+
+    padding:38px 15px;
+
+    font-size:13px;
 }
 
-/* TOP */
-.top{
+footer strong{
+    color:#dfbb76;
+}
+
+.footer-line{
+    width:70px;
+    height:2px;
+
+    background:#c9a45e;
+
+    margin:14px auto;
+}
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+.top-btn{
     position:fixed;
-    bottom:22px;
-    left:22px;
+
+    bottom:20px;
+    left:20px;
+
     width:45px;
     height:45px;
+
     border:0;
-    border-radius:50%;
-    background:var(--primary);
-    color:#fff;
+
+    border-radius:13px;
+
+    background:#d8b36a;
+
+    color:#111b29;
+
+    font-size:20px;
+
     cursor:pointer;
-    display:none;
-    z-index:900;
-    font-size:18px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999;
 }
 
-/* RESPONSIVE */
+.top-btn.show{
+    opacity:1;
+    visibility:visible;
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.active{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media(max-width:900px){
 
     .menu{
-        position:absolute;
-        top:78px;
-        right:0;
-        left:0;
-        background:#fff;
-        padding:20px;
         display:none;
+
+        position:absolute;
+
+        top:76px;
+        right:4%;
+        left:4%;
+
+        padding:15px;
+
         flex-direction:column;
-        align-items:stretch;
-        box-shadow:0 20px 30px rgba(0,0,0,.08);
+
+        gap:0;
+
+        background:#08111f;
+
+        border:
+        1px solid rgba(255,255,255,.1);
+
+        border-radius:18px;
+
+        box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
     }
 
     .menu.active{
         display:flex;
     }
 
-    .mobile-btn{
+    .menu a{
+        width:100%;
+
+        padding:12px 10px;
+
+        border-bottom:
+        1px solid rgba(255,255,255,.06);
+    }
+
+    .menu a:last-child{
+        border-bottom:0;
+    }
+
+    .menu-btn{
         display:block;
     }
 
-    .hero-grid,
-    .about-grid,
-    .contact-grid{
+    .hero-grid{
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .profile-wrap{
+        order:-1;
+    }
+
+    .profile{
+        max-width:360px;
+
+        min-height:auto;
+    }
+
+    .profile img,
+    .profile-fallback{
+        height:390px;
+    }
+
+    .about-grid{
         grid-template-columns:1fr;
     }
 
-    .hero{
-        padding-top:120px;
-    }
-
-    .hero-card{
-        height:450px;
-    }
-
     .stats-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .features,
-    .projects,
-    .news{
         grid-template-columns:1fr 1fr;
     }
 
-    .footer-grid{
+    .project-grid{
         grid-template-columns:1fr 1fr;
     }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
 }
 
-@media(max-width:600px){
+
+@media(max-width:560px){
+
+    .container{
+        width:90%;
+    }
 
     section{
         padding:70px 0;
     }
 
-    .nav{
-        height:68px;
-    }
-
-    .menu{
-        top:68px;
-    }
-
-    .hero{
-        min-height:auto;
-        padding:110px 0 70px;
+    .hero-grid{
+        padding:65px 0;
     }
 
     .hero h1{
-        font-size:40px;
+        font-size:48px;
+
+        letter-spacing:-1px;
+    }
+
+    .hero h2{
+        font-size:18px;
     }
 
     .hero p{
-        font-size:15px;
+        font-size:14px;
     }
 
-    .hero-card{
-        height:400px;
+    .profile{
+        max-width:310px;
     }
 
-    .profile-placeholder{
-        width:220px;
-        height:300px;
+    .profile img,
+    .profile-fallback{
+        height:350px;
     }
 
-    .section-head h2{
+    .section-title{
+        margin-bottom:35px;
+    }
+
+    .section-title h2{
         font-size:29px;
     }
 
-    .features,
-    .projects,
-    .news,
-    .footer-grid{
+    .stats-grid,
+    .project-grid,
+    .gallery-grid,
+    .two-column{
         grid-template-columns:1fr;
     }
 
-    .stats-grid{
-        grid-template-columns:1fr 1fr;
+    .gallery-item{
+        height:190px;
     }
 
-    .stat .number{
-        font-size:32px;
+    .quote blockquote{
+        font-size:21px;
     }
 
-    .card{
-        padding:23px;
+    .contact-box{
+        padding:35px 20px;
     }
+
+    .contact-box h3{
+        font-size:23px;
+    }
+
 }
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *:before,
+    *:after{
+        animation:none !important;
+        transition:none !important;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<header>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header id="header">
+
 <div class="container nav">
 
 <a href="#home" class="logo">
-    <span class="logo-icon">ب</span>
-    <span>بهزاد حسینی</span>
+بهزاد <span>حسینی</span>
 </a>
 
-<button class="mobile-btn" onclick="toggleMenu()">☰</button>
-
 <nav class="menu" id="menu">
-    <a href="#home">خانه</a>
-    <a href="#about">درباره من</a>
-    <a href="#experience">سوابق</a>
-    <a href="#activities">فعالیت‌ها</a>
-    <a href="#projects">پروژه‌ها</a>
-    <a href="#news">اخبار</a>
-    <a href="#contact" class="nav-btn">ارتباط با من</a>
+
+<a href="#home">خانه</a>
+<a href="#about">درباره من</a>
+<a href="#career">سوابق</a>
+<a href="#projects">کارنامه</a>
+<a href="#youth">جوانان</a>
+<a href="#gallery">گالری</a>
+<a href="#contact">ارتباط</a>
+
 </nav>
 
+<button
+class="menu-btn"
+id="menuBtn"
+aria-label="باز کردن منو">
+
+☰
+
+</button>
+
 </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero" id="home">
+
 <div class="container hero-grid">
 
+
+<div class="hero-content">
+
+<div class="badge">
+وب‌سایت شخصی و اجتماعی
+</div>
+
+<h1>
+بهزاد <span>حسینی</span>
+</h1>
+
+<h2>
+فرزند برزو حسینی
+<br>
+فرهنگی، مدیر آموزشی و فعال اجتماعی شهر شاهو
+</h2>
+
+<p>
+متولد ۱۰ فروردین ۱۳۶۵ در شهر شاهو؛
+تحصیل‌کرده رشته زبان و ادبیات فارسی در دانشگاه کردستان سنندج.
+فعال در حوزه آموزش و پرورش، مدیریت آموزشی و فعالیت‌های اجتماعی و شهری.
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="btn">
+آشنایی بیشتر با من
+</a>
+
+<a href="#projects" class="btn btn-outline">
+مشاهده کارنامه
+</a>
+
+</div>
+
+</div>
+
+
+<div class="profile-wrap">
+
+<div class="profile">
+
+<img
+src="profile.jpg"
+alt="بهزاد حسینی"
+id="profileImage"
+>
+
+<div
+class="profile-fallback"
+id="profileFallback">
+
 <div>
-    <div class="badge">● صفحه رسمی شخصی</div>
 
-    <h1>
-        بهزاد <span>حسینی</span>
-    </h1>
-
-    <p>
-        معلم، فعال اجتماعی و عضو شورای اسلامی شهر شاهو در دوره ششم؛
-        با تمرکز بر خدمت صادقانه، پیگیری مطالبات شهروندان و تلاش برای
-        توسعه و آبادانی شهر شاهو.
-    </p>
-
-    <div class="hero-buttons">
-        <a href="#about" class="btn btn-primary">بیشتر درباره من ←</a>
-        <a href="#contact" class="btn btn-outline">ارتباط با من</a>
-    </div>
+<div style="font-size:55px;">
+👤
 </div>
 
+<p>
+عکس بهزاد حسینی
+</p>
 
-<div class="hero-card">
-
-    <!-- برای قرار دادن عکس خودتان، این قسمت را با تگ img عوض کنید -->
-    <div class="profile-placeholder">
-        ب
-    </div>
-
-    <div class="hero-info">
-        <strong>بهزاد حسینی</strong>
-        <small>معلم • فعال اجتماعی • عضو شورای اسلامی شهر شاهو</small>
-    </div>
+<small>
+برای نمایش عکس، فایل profile.jpg
+را در کنار index.html قرار دهید.
+</small>
 
 </div>
 
 </div>
+
+</div>
+
+</div>
+
+
+</div>
+
 </section>
 
 
-<!-- ABOUT -->
-<section id="about">
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
 <div class="container">
 
-<div class="section-head">
-    <div class="mini">درباره من</div>
-    <h2>آشنایی با بهزاد حسینی</h2>
-    <p>
-        این بخش برای معرفی مسیر زندگی، تحصیلات، فعالیت‌های اجتماعی
-        و تجربه‌های مدیریتی و شهری طراحی شده است.
-    </p>
+<div class="section-title reveal">
+
+<div class="eyebrow">
+درباره من
+</div>
+
+<h2>
+مسیر زندگی و فعالیت
+</h2>
+
+<p>
+از مدارس شاهو تا دانشگاه، آموزش و پرورش و فعالیت اجتماعی
+</p>
+
 </div>
 
 
 <div class="about-grid">
 
-<div class="card">
-<h3>معرفی کوتاه</h3>
 
-<p>
-من بهزاد حسینی، متولد ۱۰ فروردین ۱۳۶۵، دارای مدرک کارشناسی
-زبان و ادبیات فارسی و از فرهنگیان و معلمان آموزش و پرورش هستم.
-</p>
+<div class="info-box reveal">
 
+<div class="info">
+
+<strong>نام</strong>
+
+<span>
+بهزاد حسینی
+</span>
+
+</div>
+
+
+<div class="info">
+
+<strong>پدر</strong>
+
+<span>
+برزو حسینی
+</span>
+
+</div>
+
+
+<div class="info">
+
+<strong>زادگاه</strong>
+
+<span>
+شهر شاهو
+</span>
+
+</div>
+
+
+<div class="info">
+
+<strong>تاریخ تولد</strong>
+
+<span>
+۱۰ فروردین ۱۳۶۵
+</span>
+
+</div>
+
+
+<div class="info">
+
+<strong>تحصیلات</strong>
+
+<span>
+کارشناسی زبان و ادبیات فارسی
 <br>
+دانشگاه کردستان – سنندج
+</span>
+
+</div>
+
+
+<div class="info">
+
+<strong>فعالیت حرفه‌ای</strong>
+
+<span>
+دبیر آموزش و پرورش شهرستان روانسر
+</span>
+
+</div>
+
+
+<div class="info">
+
+<strong>فعالیت شهری</strong>
+
+<span>
+عضو شورای اسلامی شهر شاهو در دوره ششم
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="text reveal">
 
 <p>
-در کنار فعالیت آموزشی، همواره تلاش کرده‌ام در زمینه مسائل
-اجتماعی و شهری نیز نقش فعالی داشته باشم و صدای مطالبات
-شهروندان باشم.
+بهزاد حسینی، فرزند برزو حسینی، متولد شهر شاهو است. دوران کودکی، نوجوانی و بخش مهمی از زندگی او در همین شهر سپری شده است.
 </p>
-
-<br>
 
 <p>
-عضویت و فعالیت در شورای اسلامی شهر شاهو در دوره ششم،
-بخش مهمی از تجربه اجتماعی و مدیریتی من بوده است.
+تحصیلات ابتدایی و متوسطه خود را در مدارس شهر شاهو گذراند و پس از پایان دوران مدرسه برای ادامه تحصیل وارد دانشگاه کردستان در سنندج شد.
 </p>
 
+<p>
+در دانشگاه کردستان در رشته زبان و ادبیات فارسی تحصیل کرد و پس از پایان تحصیلات دانشگاهی وارد عرصه آموزش و پرورش شد.
+</p>
+
+<p>
+فعالیت در محیط آموزشی و ارتباط با دانش‌آموزان، خانواده‌ها و فرهنگیان، تجربه‌ای ارزشمند ایجاد کرد و نگاه او را نسبت به اهمیت آموزش، برنامه‌ریزی، مسئولیت‌پذیری و کار گروهی تقویت کرد.
+</p>
+
+<p>
+در ادامه مسیر، فعالیت اجتماعی و شهری نیز بخشی از تجربه او شد و حضور در شورای اسلامی شهر شاهو فرصتی برای پیگیری مسائل و مطالبات شهروندان فراهم کرد.
+</p>
+
+<div class="highlight">
+«شاهو برای من فقط یک شهر نیست؛ خانه‌ای است که بخش بزرگی از زندگی، خاطرات و هویت من در آن شکل گرفته است.»
 </div>
 
-
-<div class="card">
-
-<h3>اطلاعات</h3>
-
-<div class="info-list">
-
-<div class="info-item">
-<span>نام و نام خانوادگی</span>
-<strong>بهزاد حسینی</strong>
 </div>
 
-<div class="info-item">
-<span>تاریخ تولد</span>
-<strong>۱۰ فروردین ۱۳۶۵</strong>
-</div>
-
-<div class="info-item">
-<span>تحصیلات</span>
-<strong>کارشناسی زبان و ادبیات فارسی</strong>
-</div>
-
-<div class="info-item">
-<span>شغل</span>
-<strong>معلم آموزش و پرورش</strong>
-</div>
-
-<div class="info-item">
-<span>فعالیت شهری</span>
-<strong>شورای اسلامی شهر شاهو</strong>
-</div>
 
 </div>
 
 </div>
 
-</div>
-</div>
 </section>
 
 
-<!-- STATS -->
+<!-- =====================================================
+     STATS
+===================================================== -->
+
 <section class="stats">
-<div class="container stats-grid">
 
-<div class="stat">
-<div class="number">۶</div>
-<p>دوره شورای اسلامی شهر</p>
-</div>
-
-<div class="stat">
-<div class="number">۱</div>
-<p>هدف؛ خدمت به مردم</p>
-</div>
-
-<div class="stat">
-<div class="number">∞</div>
-<p>تلاش برای آبادانی شاهو</p>
-</div>
-
-<div class="stat">
-<div class="number">۲۴/۷</div>
-<p>ارتباط و پیگیری مطالبات</p>
-</div>
-
-</div>
-</section>
-
-
-<!-- EXPERIENCE -->
-<section id="experience">
 <div class="container">
 
-<div class="section-head">
-<div class="mini">سوابق</div>
-<h2>مسیر فعالیت و تجربه</h2>
+<div class="section-title reveal">
+
+<div class="eyebrow">
+مسیر فعالیت
+</div>
+
+<h2>
+چند بخش مهم از کارنامه
+</h2>
+
+</div>
+
+
+<div class="stats-grid">
+
+
+<div class="stat reveal">
+
+<div class="stat-number">
+۱
+</div>
+
+<div class="stat-title">
+دوره عضویت در شورای شهر
+</div>
+
+</div>
+
+
+<div class="stat reveal">
+
+<div class="stat-number">
+۳
+</div>
+
+<div class="stat-title">
+سال ریاست شورای اسلامی شهر شاهو
+</div>
+
+</div>
+
+
+<div class="stat reveal">
+
+<div class="stat-number">
+۱
+</div>
+
+<div class="stat-title">
+مدرک کارشناسی
+</div>
+
+</div>
+
+
+<div class="stat reveal">
+
+<div class="stat-number">
+∞
+</div>
+
+<div class="stat-title">
+علاقه به آبادانی شاهو
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CAREER
+===================================================== -->
+
+<section id="career">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<div class="eyebrow">
+سوابق
+</div>
+
+<h2>
+از آموزش تا مدیریت شهری
+</h2>
+
 <p>
-نگاهی کوتاه به مسیر تحصیلی، شغلی و اجتماعی.
+بخشی از مسیر حرفه‌ای، آموزشی و اجتماعی بهزاد حسینی
 </p>
+
 </div>
 
 
 <div class="timeline">
 
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-box">
-<span>تحصیلات</span>
-<h3>کارشناسی زبان و ادبیات فارسی</h3>
+
+<div class="timeline-item reveal">
+
+<h3>
+تحصیل در مدارس شهر شاهو
+</h3>
+
 <p>
-تحصیل در رشته زبان و ادبیات فارسی و علاقه‌مندی به حوزه
-فرهنگ، آموزش و فعالیت‌های اجتماعی.
+سال‌های ابتدایی و متوسطه در مدارس شهر شاهو سپری شد و ارتباط نزدیک با فضای آموزشی و اجتماعی شهر شکل گرفت.
 </p>
-</div>
+
 </div>
 
 
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-box">
-<span>فعالیت آموزشی</span>
-<h3>معلم آموزش و پرورش</h3>
+<div class="timeline-item reveal">
+
+<h3>
+دانشگاه کردستان – سنندج
+</h3>
+
 <p>
-فعالیت در حوزه آموزش و تلاش برای نقش‌آفرینی مؤثر در رشد
-و تربیت نسل آینده.
+ادامه تحصیل در رشته زبان و ادبیات فارسی و دریافت مدرک کارشناسی.
 </p>
-</div>
+
 </div>
 
 
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-box">
-<span>فعالیت اجتماعی و شهری</span>
-<h3>عضویت در شورای اسلامی شهر شاهو</h3>
+<div class="timeline-item reveal">
+
+<h3>
+دبیر آموزش و پرورش
+</h3>
+
 <p>
-حضور در شورای اسلامی شهر شاهو در دوره ششم و پیگیری مسائل
-و مطالبات شهروندان.
+ورود به عرصه تعلیم و تربیت و فعالیت حرفه‌ای در آموزش و پرورش شهرستان روانسر.
 </p>
+
 </div>
+
+
+<div class="timeline-item reveal">
+
+<h3>
+مدیریت آموزشی
+</h3>
+
+<p>
+کسب تجربه در مدیریت مدرسه، برنامه‌ریزی آموزشی، ارتباط با خانواده‌ها و پیگیری امور دانش‌آموزان.
+</p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<h3>
+شورای اسلامی شهر شاهو – دوره ششم
+</h3>
+
+<p>
+انتخاب به عنوان عضو شورای اسلامی شهر شاهو و فعالیت برای پیگیری مطالبات شهروندان.
+</p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<h3>
+سه سال ریاست شورای اسلامی شهر شاهو
+</h3>
+
+<p>
+فعالیت در جایگاه ریاست شورا و همکاری با اعضای شورا و شهرداری برای پیگیری امور و پروژه‌های شهری.
+</p>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
 
-<!-- ACTIVITIES -->
-<section id="activities" style="background:#eef5f3;">
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section class="projects" id="projects">
+
 <div class="container">
 
-<div class="section-head">
-<div class="mini">فعالیت‌ها</div>
-<h2>محورهای اصلی خدمت</h2>
+<div class="section-title reveal">
+
+<div class="eyebrow">
+کارنامه فعالیت
+</div>
+
+<h2>
+گام‌هایی برای آبادانی شاهو
+</h2>
+
 <p>
-تمرکز بر مسائل واقعی و نیازهای شهروندان.
+بخشی از موضوعات و پروژه‌های شهری مورد پیگیری
 </p>
+
 </div>
 
 
-<div class="features">
+<div class="project-grid">
 
-<div class="feature">
+
+<div class="project reveal">
+
 <div class="icon">💧</div>
-<h3>آب و زیرساخت</h3>
+
+<h3>
+آب و تأمین آب شرب
+</h3>
+
 <p>
-پیگیری مسائل مربوط به تأمین آب، شبکه توزیع و توسعه زیرساخت‌های
-ضروری شهر.
+پیگیری موضوع آب شرب، حفر چاه سوم و تلاش برای کاهش مشکلات تأمین آب و حرکت به سوی تأمین پایدار آب شهر.
 </p>
+
 </div>
 
-<div class="feature">
-<div class="icon">🏗️</div>
-<h3>عمران شهری</h3>
-<p>
-توجه به معابر، پروژه‌های عمرانی، تجهیزات شهری و توسعه متوازن
-مناطق مختلف شهر.
-</p>
-</div>
 
-<div class="feature">
+<div class="project reveal">
+
 <div class="icon">⚽</div>
-<h3>ورزش و جوانان</h3>
+
+<h3>
+زمین چمن شاهو
+</h3>
+
 <p>
-حمایت از ورزشکاران، توسعه فضاهای ورزشی و ایجاد فرصت‌های
-بیشتر برای جوانان.
+پیگیری و حمایت از توسعه فضاهای ورزشی و ایجاد امکانات مناسب برای استفاده جوانان و ورزشکاران شهر.
 </p>
+
 </div>
 
-<div class="feature">
+
+<div class="project reveal">
+
 <div class="icon">🏫</div>
-<h3>آموزش و مدارس</h3>
-<p>
-توجه به وضعیت مدارس و تلاش برای بهبود امکانات آموزشی
-دانش‌آموزان شهر.
-</p>
-</div>
 
-<div class="feature">
-<div class="icon">🌱</div>
-<h3>محیط زیست</h3>
-<p>
-پیگیری مسائل مربوط به پسماند، فاضلاب، آلودگی و حفظ طبیعت
-زیبای منطقه.
-</p>
-</div>
+<h3>
+چمن مصنوعی مدرسه
+</h3>
 
-<div class="feature">
-<div class="icon">🤝</div>
-<h3>ارتباط با مردم</h3>
 <p>
-شنیدن مشکلات شهروندان و تلاش برای پیگیری درخواست‌ها از
-مسیرهای قانونی و اداری.
+پیگیری ایجاد فضای ورزشی مناسب برای دانش‌آموزان و جوانان و حمایت از توسعه امکانات ورزشی.
 </p>
-</div>
 
 </div>
+
+
+<div class="project reveal">
+
+<div class="icon">🛣️</div>
+
+<h3>
+آسفالت و معابر
+</h3>
+
+<p>
+پیگیری بهسازی و آسفالت کوچه‌ها و معابر با هدف بهبود رفت‌وآمد و کیفیت زندگی شهروندان.
+</p>
+
 </div>
+
+
+<div class="project reveal">
+
+<div class="icon">🌳</div>
+
+<h3>
+توسعه پارک
+</h3>
+
+<p>
+پیگیری توسعه فضاهای سبز و پارک برای ایجاد محیط مناسب‌تر برای خانواده‌ها، کودکان و شهروندان.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="icon">🏙️</div>
+
+<h3>
+زیباسازی شهر
+</h3>
+
+<p>
+توجه به زیبایی و ساماندهی فضاهای عمومی و تلاش برای ایجاد چهره‌ای زیباتر و دلنشین‌تر برای شاهو.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="icon">💡</div>
+
+<h3>
+روشنایی معابر
+</h3>
+
+<p>
+پیگیری موضوع روشنایی معابر و نقاط مورد نیاز برای افزایش امنیت و آرامش رفت‌وآمد شهروندان.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="icon">🚜</div>
+
+<h3>
+ماشین‌آلات شهرداری
+</h3>
+
+<p>
+پیگیری تقویت ماشین‌آلات و تجهیزات شهرداری برای افزایش توان خدمات‌رسانی و اجرای امور عمرانی.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="icon">🏗️</div>
+
+<h3>
+پیگیری امور عمرانی
+</h3>
+
+<p>
+پیگیری امکانات و ماشین‌آلات مورد نیاز برای اجرای پروژه‌ها و امور عمرانی شهر.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="icon">🚪</div>
+
+<h3>
+ورودی و خروجی شهر
+</h3>
+
+<p>
+پیگیری ساماندهی ورودی و خروجی شاهو برای بهبود سیمای شهری و وضعیت دسترسی و رفت‌وآمد.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="icon">👷</div>
+
+<h3>
+توجه به پرسنل شهرداری
+</h3>
+
+<p>
+توجه و پیگیری مسائل مرتبط با کارکنان و پرسنل شهرداری و بهبود وضعیت خدمات شهری.
+</p>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="icon">🏃</div>
+
+<h3>
+توسعه ورزش
+</h3>
+
+<p>
+تلاش برای توسعه امکانات ورزشی و ایجاد محیط مناسب برای نشاط، سلامت و فعالیت جوانان شهر.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- PROJECTS -->
-<section id="projects">
+<!-- =====================================================
+     QUOTE
+===================================================== -->
+
+<section class="quote">
+
+<div class="container reveal">
+
+<blockquote>
+
+«شاهو فقط محل زندگی من نیست؛
+خانه‌ای است که کودکی، تحصیل، خاطرات و بخش بزرگی از زندگی من در آن شکل گرفته است.»
+
+</blockquote>
+
+<small>
+برای شهری آبادتر، زیباتر، بانشاط‌تر و برخوردارتر از امکانات مناسب
+</small>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     YOUTH
+===================================================== -->
+
+<section class="youth" id="youth">
+
 <div class="container">
 
-<div class="section-head">
-<div class="mini">پروژه‌ها</div>
-<h2>پیگیری‌های عمرانی و شهری</h2>
+<div class="section-title reveal">
+
+<div class="eyebrow">
+نسل آینده
+</div>
+
+<h2>
+جوانان و آینده شاهو
+</h2>
+
 <p>
-این بخش می‌تواند در آینده با تصاویر و گزارش دقیق پروژه‌ها
-به‌روزرسانی شود.
+جوانان سرمایه اصلی آینده شهر هستند.
 </p>
+
 </div>
 
 
-<div class="projects">
+<div class="two-column">
 
-<div class="project">
-<div class="project-img">💧</div>
-<div class="project-content">
-<h3>توسعه زیرساخت آب</h3>
+
+<div class="list-box reveal">
+
+<ul>
+
+<li>
+حمایت از ورزشکاران و تیم‌های ورزشی
+</li>
+
+<li>
+توسعه فضاهای ورزشی
+</li>
+
+<li>
+ایجاد محیط سالم برای نشاط اجتماعی
+</li>
+
+<li>
+توجه به آموزش و استعدادهای جوانان
+</li>
+
+<li>
+افزایش مشارکت جوانان در فعالیت‌های اجتماعی
+</li>
+
+<li>
+تلاش برای ایجاد فضای بهتر برای زندگی جوانان
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="text reveal">
+
 <p>
-پیگیری طرح‌ها و اقدامات مرتبط با تأمین آب پایدار و بهبود
-زیرساخت آبرسانی شهر.
+جوانان مهم‌ترین سرمایه آینده شاهو هستند. توجه به جوانان فقط به معنای ساخت یک فضای ورزشی نیست؛ بلکه باید برای آنان محیط سالم، فرصت رشد، نشاط اجتماعی و امکان مشارکت در فعالیت‌های شهر فراهم شود.
 </p>
-</div>
-</div>
 
-
-<div class="project">
-<div class="project-img">⚽</div>
-<div class="project-content">
-<h3>توسعه امکانات ورزشی</h3>
 <p>
-حمایت از ایجاد و تکمیل فضاهای ورزشی برای جوانان و ورزشکاران
-شهر شاهو.
+باور من این است که اگر به جوانان اعتماد کنیم و ظرفیت‌های آنان را در مسیر درست قرار دهیم، خود جوانان می‌توانند یکی از مهم‌ترین نیروهای سازنده آینده شاهو باشند.
 </p>
-</div>
-</div>
 
-
-<div class="project">
-<div class="project-img">🏫</div>
-<div class="project-content">
-<h3>پیگیری وضعیت مدارس</h3>
-<p>
-توجه به زیرساخت‌های آموزشی و پیگیری مشکلات مدارس و فضاهای
-آموزشی شهر.
-</p>
-</div>
+<div class="highlight">
+جوانان امروز، سازندگان شاهوی فردا هستند.
 </div>
 
 </div>
+
+
 </div>
+
+</div>
+
 </section>
 
 
-<!-- NEWS -->
-<section id="news" style="background:#eef5f3;">
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gallery" id="gallery">
+
 <div class="container">
 
-<div class="section-head">
-<div class="mini">اخبار و اطلاعیه‌ها</div>
-<h2>آخرین مطالب</h2>
+<div class="section-title reveal">
+
+<div class="eyebrow">
+گالری تصاویر
+</div>
+
+<h2>
+تصاویر و خاطرات
+</h2>
+
 <p>
-اخبار و گزارش‌های فعالیت‌های رسمی در این بخش منتشر خواهد شد.
+در این بخش می‌توانید تصاویر فعالیت‌های شخصی، فرهنگی، اجتماعی، ورزشی و شهری را قرار دهید.
 </p>
+
+</div>
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-item reveal">
+<span>فعالیت‌های شورای شهر</span>
 </div>
 
 
-<div class="news">
-
-<div class="news-card">
-<div class="news-date">اطلاعیه رسمی</div>
-<h3>پیگیری مطالبات شهروندان</h3>
-<p>
-تلاش برای انعکاس مشکلات و درخواست‌های شهروندان از مسیرهای
-قانونی و اداری.
-</p>
+<div class="gallery-item reveal">
+<span>پروژه آب و چاه سوم</span>
 </div>
 
 
-<div class="news-card">
-<div class="news-date">گزارش فعالیت</div>
-<h3>توسعه و آبادانی شاهو</h3>
-<p>
-پیگیری مسائل عمرانی و زیرساختی و تلاش برای جذب امکانات
-مورد نیاز شهر.
-</p>
+<div class="gallery-item reveal">
+<span>زمین چمن شاهو</span>
 </div>
 
 
-<div class="news-card">
-<div class="news-date">ارتباط با مردم</div>
-<h3>شنیدن صدای شهروندان</h3>
-<p>
-پیشنهادها، انتقادات و درخواست‌های مردم بخش مهمی از مسیر
-خدمت و پیگیری خواهد بود.
-</p>
+<div class="gallery-item reveal">
+<span>زمین چمن مصنوعی مدرسه</span>
+</div>
+
+
+<div class="gallery-item reveal">
+<span>پروژه‌های عمرانی</span>
+</div>
+
+
+<div class="gallery-item reveal">
+<span>فعالیت‌های ورزشی</span>
+</div>
+
+
+<div class="gallery-item reveal">
+<span>دیدار با مردم</span>
+</div>
+
+
+<div class="gallery-item reveal">
+<span>فعالیت‌های فرهنگی</span>
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
 <div class="container">
 
-<div class="section-head">
-<div class="mini">ارتباط</div>
-<h2>با من در ارتباط باشید</h2>
+<div class="section-title reveal">
+
+<div class="eyebrow">
+ارتباط
+</div>
+
+<h2>
+ارتباط با بهزاد حسینی
+</h2>
+
 <p>
-برای پیشنهاد، انتقاد، درخواست یا ارائه دیدگاه می‌توانید
-از راه‌های ارتباطی رسمی استفاده کنید.
+این وب‌سایت یک پایگاه شخصی و اجتماعی دائمی است و فقط محدود به انتخابات نیست.
 </p>
+
 </div>
 
 
-<div class="contact-grid">
+<div class="contact-box reveal">
 
-<div class="card">
+<h3>
+حرف مردم شنیده می‌شود
+</h3>
 
-<h3>راه‌های ارتباطی</h3>
+<p>
+دیدگاه‌ها، پیشنهادها و مطالبات شهروندان می‌تواند در مسیر بهتر شدن آینده شهر مورد توجه قرار گیرد.
+</p>
 
-<div class="contact-list">
 
-<div class="contact-item">
-<strong>📍 شهر</strong>
-<span>شاهو</span>
+<div class="contact-links">
+
+<div class="contact-link">
+📍 شهر شاهو
 </div>
 
-<div class="contact-item">
-<strong>📱 تلفن</strong>
-<span>اطلاعات تماس به‌زودی درج می‌شود</span>
+<div class="contact-link">
+👨‍🏫 فرهنگی
 </div>
 
-<div class="contact-item">
-<strong>📧 ایمیل</strong>
-<span>ایمیل رسمی به‌زودی درج می‌شود</span>
-</div>
-
-<div class="contact-item">
-<strong>📱 شبکه‌های اجتماعی</strong>
-<span>لینک صفحات رسمی به‌زودی اضافه می‌شود</span>
-</div>
-
+<div class="contact-link">
+🏛️ فعال اجتماعی
 </div>
 
 </div>
 
 
-<form class="form" onsubmit="sendMessage(event)">
-
-<div class="form-group">
-<label>نام شما</label>
-<input type="text" required placeholder="نام و نام خانوادگی">
-</div>
-
-<div class="form-group">
-<label>شماره تماس</label>
-<input type="tel" placeholder="شماره تماس">
-</div>
-
-<div class="form-group">
-<label>پیام</label>
-<textarea required placeholder="پیام، پیشنهاد یا درخواست خود را بنویسید..."></textarea>
-</div>
-
-<button class="btn btn-primary" type="submit">
-ارسال پیام
-</button>
-
-</form>
+<a href="#home" class="btn">
+بازگشت به صفحه اصلی
+</a>
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-<h3>بهزاد حسینی</h3>
 <p>
-معلم، فعال اجتماعی و عضو شورای اسلامی شهر شاهو در دوره ششم.
-تلاش برای خدمت، پیگیری مطالبات مردم و توسعه شهر.
+
+<strong>
+بهزاد حسینی
+</strong>
+
+&nbsp; | &nbsp;
+
+فرزند برزو حسینی
+
+&nbsp; | &nbsp;
+
+فرهنگی و فعال اجتماعی شهر شاهو
+
 </p>
-</div>
 
-<div>
-<h3>دسترسی سریع</h3>
-<div class="footer-links">
-<a href="#home">خانه</a>
-<a href="#about">درباره من</a>
-<a href="#activities">فعالیت‌ها</a>
-<a href="#projects">پروژه‌ها</a>
-</div>
-</div>
+<div class="footer-line"></div>
 
-<div>
-<h3>ارتباط</h3>
-<div class="footer-links">
-<a href="#contact">ارتباط با من</a>
-<a href="#news">اخبار و اطلاعیه‌ها</a>
-</div>
-</div>
+<p>
+«با مردم، برای مردم، برای آینده شاهو»
+</p>
 
-</div>
-
-<div class="copyright">
-© ۱۴۰۵ تمامی حقوق این وب‌سایت متعلق به بهزاد حسینی است.
-</div>
-
-</div>
+<p style="margin-top:10px;opacity:.65;">
+© ۱۴۰۵ تمامی حقوق این وب‌سایت محفوظ است.
+</p>
 
 </footer>
 
 
-<button class="top" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button
+class="top-btn"
+id="topBtn"
+aria-label="بازگشت به بالا">
+
 ↑
+
 </button>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
-function toggleMenu(){
-    document.getElementById("menu").classList.toggle("active");
-}
+/* ================= HEADER ================= */
 
-document.querySelectorAll(".menu a").forEach(function(link){
-    link.addEventListener("click",function(){
-        document.getElementById("menu").classList.remove("active");
-    });
-});
+const header =
+document.getElementById("header");
 
 window.addEventListener("scroll",function(){
 
-    const btn=document.getElementById("topBtn");
+    if(window.scrollY > 30){
 
-    if(window.scrollY>500){
-        btn.style.display="block";
+        header.classList.add("scrolled");
+
     }else{
-        btn.style.display="none";
+
+        header.classList.remove("scrolled");
+
     }
 
 });
 
-function sendMessage(event){
 
-    event.preventDefault();
+/* ================= MOBILE MENU ================= */
 
-    alert("پیام شما ثبت شد. برای فعال شدن ارسال واقعی پیام، باید فرم به یک سرویس یا ایمیل متصل شود.");
+const menuBtn =
+document.getElementById("menuBtn");
 
+const menu =
+document.getElementById("menu");
+
+menuBtn.addEventListener("click",function(){
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+
+        menuBtn.innerHTML="✕";
+
+    }else{
+
+        menuBtn.innerHTML="☰";
+
+    }
+
+});
+
+
+/* CLOSE MENU AFTER CLICK */
+
+document.querySelectorAll(".menu a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        menu.classList.remove("active");
+
+        menuBtn.innerHTML="☰";
+
+    });
+
+});
+
+
+/* ================= PROFILE IMAGE ================= */
+
+const profileImage =
+document.getElementById("profileImage");
+
+const profileFallback =
+document.getElementById("profileFallback");
+
+profileImage.addEventListener("error",function(){
+
+    profileImage.style.display="none";
+
+    profileFallback.style.display="flex";
+
+});
+
+
+/* ================= REVEAL ================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(
+
+function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("active");
+
+        }
+
+    });
+
+},
+{
+    threshold:.12
 }
+);
+
+revealElements.forEach(function(element){
+
+    observer.observe(element);
+
+});
+
+
+/* ================= TOP BUTTON ================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 500){
+
+        topBtn.classList.add("show");
+
+    }else{
+
+        topBtn.classList.remove("show");
+
+    }
+
+});
+
+
+topBtn.addEventListener("click",function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+
+/* ================= ESCAPE MOBILE MENU ================= */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        menu.classList.remove("active");
+
+        menuBtn.innerHTML="☰";
+
+    }
+
+});
 
 </script>
 
 </body>
-    </html>
+</html>
