@@ -1,16 +1,36 @@
-DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>بهزاد حسینی | شورای اسلامی شهر شاهو</title>
+<title>بهزاد حسینی | معلم و فعال اجتماعی شهر شاهو</title>
 
-<meta name="description" content="وب‌سایت شخصی بهزاد حسینی؛ معلم، فعال اجتماعی و عضو شورای اسلامی شهر شاهو">
-<meta name="keywords" content="بهزاد حسینی, شاهو, شورای شهر شاهو, شورای اسلامی شهر شاهو, بهزاد حسینی شاهو">
+<meta name="description" content="وب‌سایت رسمی بهزاد حسینی؛ معلم، فعال اجتماعی و عضو شورای اسلامی شهر شاهو در دوره ششم.">
+<meta name="keywords" content="بهزاد حسینی, شاهو, شورای شهر شاهو, معلم, فعال اجتماعی">
 <meta name="author" content="بهزاد حسینی">
 
+<meta property="og:title" content="بهزاد حسینی | صفحه رسمی">
+<meta property="og:description" content="معرفی، سوابق، فعالیت‌ها و برنامه‌های بهزاد حسینی">
+<meta property="og:type" content="website">
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --primary:#0b5e55;
+    --primary-dark:#06463f;
+    --gold:#d4af37;
+    --gold-light:#f3d675;
+    --dark:#071b19;
+    --text:#263a38;
+    --muted:#6c7d7a;
+    --bg:#f5f8f7;
+    --white:#ffffff;
+    --border:#e3ebe9;
+    --shadow:0 15px 45px rgba(7,38,34,.10);
+}
+
 *{
     margin:0;
     padding:0;
@@ -18,10 +38,1340 @@ DOCTYPE html>
     scroll-behavior:smooth;
 }
 
-:root{
-    --navy:#071b32;
-    --blue:#0d3558;
-    --blue2:#164d78;
-    --gold:#d7a23a;
-    --gold2:#f0c96d;
-    --white:#ffffff;
+body{
+    font-family:'Vazirmatn',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.9;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.nav{
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:900;
+    color:var(--primary);
+    font-size:20px;
+}
+
+.logo-icon{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--primary),#118678);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 20px rgba(11,94,85,.25);
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.menu a{
+    font-size:14px;
+    font-weight:600;
+    color:#334946;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--primary);
+}
+
+.nav-btn{
+    padding:10px 18px;
+    border-radius:30px;
+    background:var(--primary);
+    color:#fff !important;
+}
+
+.mobile-btn{
+    display:none;
+    border:0;
+    background:transparent;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    min-height:760px;
+    padding-top:140px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 10% 20%,rgba(212,175,55,.15),transparent 25%),
+      radial-gradient(circle at 90% 10%,rgba(11,94,85,.13),transparent 30%),
+      linear-gradient(180deg,#fafffe,#eef6f4);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:70px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#e4f2ef;
+    color:var(--primary);
+    border:1px solid #cfe7e2;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(38px,5vw,70px);
+    line-height:1.2;
+    color:var(--dark);
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:var(--primary);
+}
+
+.hero p{
+    font-size:17px;
+    color:#63736f;
+    max-width:680px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 23px;
+    border-radius:13px;
+    font-size:14px;
+    font-weight:700;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#fff;
+    box-shadow:0 10px 25px rgba(11,94,85,.2);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    background:var(--primary-dark);
+}
+
+.btn-outline{
+    border:1px solid #cfdcd9;
+    background:#fff;
+    color:var(--primary);
+}
+
+.btn-outline:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
+}
+
+.hero-card{
+    position:relative;
+    height:510px;
+    border-radius:35px;
+    background:linear-gradient(145deg,#0b5e55,#083d38);
+    overflow:hidden;
+    box-shadow:0 30px 70px rgba(4,56,50,.25);
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.hero-card::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.15);
+    top:-100px;
+    right:-80px;
+}
+
+.hero-card::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,.2);
+    bottom:-80px;
+    left:-70px;
+}
+
+.profile-placeholder{
+    width:280px;
+    height:380px;
+    border-radius:170px 170px 35px 35px;
+    background:linear-gradient(160deg,#dbe9e6,#fff);
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--primary);
+    font-size:75px;
+    font-weight:900;
+    box-shadow:0 25px 50px rgba(0,0,0,.18);
+}
+
+.hero-info{
+    position:absolute;
+    z-index:4;
+    bottom:25px;
+    right:25px;
+    left:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.18);
+    padding:17px 20px;
+    border-radius:18px;
+    color:#fff;
+}
+
+.hero-info strong{
+    display:block;
+    font-size:19px;
+}
+
+.hero-info small{
+    color:#d5e7e3;
+}
+
+/* SECTIONS */
+section{
+    padding:100px 0;
+}
+
+.section-head{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 55px;
+}
+
+.section-head .mini{
+    color:var(--gold);
+    font-weight:800;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.section-head h2{
+    font-size:36px;
+    color:var(--dark);
+    margin-bottom:12px;
+}
+
+.section-head p{
+    color:var(--muted);
+}
+
+/* ABOUT */
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:32px;
+    box-shadow:var(--shadow);
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:18px;
+    font-size:21px;
+}
+
+.info-list{
+    display:grid;
+    gap:15px;
+}
+
+.info-item{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding-bottom:13px;
+    border-bottom:1px dashed #dce5e3;
+}
+
+.info-item:last-child{
+    border-bottom:0;
+}
+
+.info-item span:first-child{
+    color:var(--muted);
+}
+
+.info-item strong{
+    color:var(--dark);
+}
+
+/* STATS */
+.stats{
+    background:var(--dark);
+    color:#fff;
+    padding:65px 0;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+    padding:20px;
+}
+
+.stat .number{
+    font-size:42px;
+    font-weight:900;
+    color:var(--gold-light);
+}
+
+.stat p{
+    color:#b7cbc7;
+    font-size:14px;
+}
+
+/* TIMELINE */
+.timeline{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    right:20px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#d7e4e1;
+}
+
+.timeline-item{
+    position:relative;
+    padding-right:65px;
+    margin-bottom:35px;
+}
+
+.timeline-dot{
+    position:absolute;
+    right:9px;
+    top:8px;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:var(--gold);
+    border:5px solid #edf5f3;
+}
+
+.timeline-box{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+
+.timeline-box span{
+    color:var(--gold);
+    font-size:13px;
+    font-weight:800;
+}
+
+.timeline-box h3{
+    margin:5px 0 8px;
+    color:var(--dark);
+}
+
+/* FEATURES */
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.feature{
+    background:#fff;
+    padding:30px;
+    border-radius:22px;
+    border:1px solid var(--border);
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-7px);
+    box-shadow:var(--shadow);
+}
+
+.icon{
+    width:54px;
+    height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:16px;
+    background:#e6f2ef;
+    color:var(--primary);
+    font-size:25px;
+    margin-bottom:18px;
+}
+
+.feature h3{
+    color:var(--dark);
+    margin-bottom:8px;
+}
+
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.project{
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+
+.project-img{
+    height:190px;
+    background:
+      linear-gradient(135deg,rgba(11,94,85,.9),rgba(212,175,55,.45)),
+      linear-gradient(45deg,#d8e7e3,#fff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:45px;
+}
+
+.project-content{
+    padding:23px;
+}
+
+.project-content h3{
+    color:var(--dark);
+    margin-bottom:8px;
+}
+
+.project-content p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* NEWS */
+.news{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.news-card{
+    background:#fff;
+    border-radius:22px;
+    padding:25px;
+    border:1px solid var(--border);
+}
+
+.news-date{
+    font-size:12px;
+    color:var(--gold);
+    font-weight:800;
+}
+
+.news-card h3{
+    color:var(--dark);
+    margin:10px 0;
+}
+
+.news-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* CONTACT */
+.contact{
+    background:#eaf3f1;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:30px;
+}
+
+.contact-list{
+    display:grid;
+    gap:15px;
+    margin-top:20px;
+}
+
+.contact-item{
+    background:#fff;
+    padding:17px;
+    border-radius:15px;
+    border:1px solid var(--border);
+}
+
+.contact-item strong{
+    display:block;
+    color:var(--primary);
+}
+
+.contact-item span{
+    font-size:14px;
+    color:var(--muted);
+}
+
+.form{
+    background:#fff;
+    padding:30px;
+    border-radius:25px;
+    border:1px solid var(--border);
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form label{
+    display:block;
+    font-size:13px;
+    margin-bottom:6px;
+    font-weight:700;
+}
+
+.form input,
+.form textarea{
+    width:100%;
+    border:1px solid #d9e4e1;
+    border-radius:13px;
+    padding:13px;
+    font-family:inherit;
+    outline:none;
+}
+
+.form textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.form input:focus,
+.form textarea:focus{
+    border-color:var(--primary);
+}
+
+/* FOOTER */
+footer{
+    background:#061614;
+    color:#fff;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr .8fr;
+    gap:35px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#a8bfbb;
+    font-size:14px;
+}
+
+.footer-links{
+    display:grid;
+    gap:8px;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:40px;
+    padding-top:20px;
+    text-align:center;
+    color:#78908c;
+    font-size:12px;
+}
+
+/* TOP */
+.top{
+    position:fixed;
+    bottom:22px;
+    left:22px;
+    width:45px;
+    height:45px;
+    border:0;
+    border-radius:50%;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    display:none;
+    z-index:900;
+    font-size:18px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .menu{
+        position:absolute;
+        top:78px;
+        right:0;
+        left:0;
+        background:#fff;
+        padding:20px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        box-shadow:0 20px 30px rgba(0,0,0,.08);
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .mobile-btn{
+        display:block;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero-card{
+        height:450px;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features,
+    .projects,
+    .news{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:70px 0;
+    }
+
+    .nav{
+        height:68px;
+    }
+
+    .menu{
+        top:68px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:110px 0 70px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-card{
+        height:400px;
+    }
+
+    .profile-placeholder{
+        width:220px;
+        height:300px;
+    }
+
+    .section-head h2{
+        font-size:29px;
+    }
+
+    .features,
+    .projects,
+    .news,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat .number{
+        font-size:32px;
+    }
+
+    .card{
+        padding:23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+<a href="#home" class="logo">
+    <span class="logo-icon">ب</span>
+    <span>بهزاد حسینی</span>
+</a>
+
+<button class="mobile-btn" onclick="toggleMenu()">☰</button>
+
+<nav class="menu" id="menu">
+    <a href="#home">خانه</a>
+    <a href="#about">درباره من</a>
+    <a href="#experience">سوابق</a>
+    <a href="#activities">فعالیت‌ها</a>
+    <a href="#projects">پروژه‌ها</a>
+    <a href="#news">اخبار</a>
+    <a href="#contact" class="nav-btn">ارتباط با من</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+<div>
+    <div class="badge">● صفحه رسمی شخصی</div>
+
+    <h1>
+        بهزاد <span>حسینی</span>
+    </h1>
+
+    <p>
+        معلم، فعال اجتماعی و عضو شورای اسلامی شهر شاهو در دوره ششم؛
+        با تمرکز بر خدمت صادقانه، پیگیری مطالبات شهروندان و تلاش برای
+        توسعه و آبادانی شهر شاهو.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#about" class="btn btn-primary">بیشتر درباره من ←</a>
+        <a href="#contact" class="btn btn-outline">ارتباط با من</a>
+    </div>
+</div>
+
+
+<div class="hero-card">
+
+    <!-- برای قرار دادن عکس خودتان، این قسمت را با تگ img عوض کنید -->
+    <div class="profile-placeholder">
+        ب
+    </div>
+
+    <div class="hero-info">
+        <strong>بهزاد حسینی</strong>
+        <small>معلم • فعال اجتماعی • عضو شورای اسلامی شهر شاهو</small>
+    </div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+
+<div class="section-head">
+    <div class="mini">درباره من</div>
+    <h2>آشنایی با بهزاد حسینی</h2>
+    <p>
+        این بخش برای معرفی مسیر زندگی، تحصیلات، فعالیت‌های اجتماعی
+        و تجربه‌های مدیریتی و شهری طراحی شده است.
+    </p>
+</div>
+
+
+<div class="about-grid">
+
+<div class="card">
+<h3>معرفی کوتاه</h3>
+
+<p>
+من بهزاد حسینی، متولد ۱۰ فروردین ۱۳۶۵، دارای مدرک کارشناسی
+زبان و ادبیات فارسی و از فرهنگیان و معلمان آموزش و پرورش هستم.
+</p>
+
+<br>
+
+<p>
+در کنار فعالیت آموزشی، همواره تلاش کرده‌ام در زمینه مسائل
+اجتماعی و شهری نیز نقش فعالی داشته باشم و صدای مطالبات
+شهروندان باشم.
+</p>
+
+<br>
+
+<p>
+عضویت و فعالیت در شورای اسلامی شهر شاهو در دوره ششم،
+بخش مهمی از تجربه اجتماعی و مدیریتی من بوده است.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>اطلاعات</h3>
+
+<div class="info-list">
+
+<div class="info-item">
+<span>نام و نام خانوادگی</span>
+<strong>بهزاد حسینی</strong>
+</div>
+
+<div class="info-item">
+<span>تاریخ تولد</span>
+<strong>۱۰ فروردین ۱۳۶۵</strong>
+</div>
+
+<div class="info-item">
+<span>تحصیلات</span>
+<strong>کارشناسی زبان و ادبیات فارسی</strong>
+</div>
+
+<div class="info-item">
+<span>شغل</span>
+<strong>معلم آموزش و پرورش</strong>
+</div>
+
+<div class="info-item">
+<span>فعالیت شهری</span>
+<strong>شورای اسلامی شهر شاهو</strong>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+<div class="container stats-grid">
+
+<div class="stat">
+<div class="number">۶</div>
+<p>دوره شورای اسلامی شهر</p>
+</div>
+
+<div class="stat">
+<div class="number">۱</div>
+<p>هدف؛ خدمت به مردم</p>
+</div>
+
+<div class="stat">
+<div class="number">∞</div>
+<p>تلاش برای آبادانی شاهو</p>
+</div>
+
+<div class="stat">
+<div class="number">۲۴/۷</div>
+<p>ارتباط و پیگیری مطالبات</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">سوابق</div>
+<h2>مسیر فعالیت و تجربه</h2>
+<p>
+نگاهی کوتاه به مسیر تحصیلی، شغلی و اجتماعی.
+</p>
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-box">
+<span>تحصیلات</span>
+<h3>کارشناسی زبان و ادبیات فارسی</h3>
+<p>
+تحصیل در رشته زبان و ادبیات فارسی و علاقه‌مندی به حوزه
+فرهنگ، آموزش و فعالیت‌های اجتماعی.
+</p>
+</div>
+</div>
+
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-box">
+<span>فعالیت آموزشی</span>
+<h3>معلم آموزش و پرورش</h3>
+<p>
+فعالیت در حوزه آموزش و تلاش برای نقش‌آفرینی مؤثر در رشد
+و تربیت نسل آینده.
+</p>
+</div>
+</div>
+
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-box">
+<span>فعالیت اجتماعی و شهری</span>
+<h3>عضویت در شورای اسلامی شهر شاهو</h3>
+<p>
+حضور در شورای اسلامی شهر شاهو در دوره ششم و پیگیری مسائل
+و مطالبات شهروندان.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ACTIVITIES -->
+<section id="activities" style="background:#eef5f3;">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">فعالیت‌ها</div>
+<h2>محورهای اصلی خدمت</h2>
+<p>
+تمرکز بر مسائل واقعی و نیازهای شهروندان.
+</p>
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+<div class="icon">💧</div>
+<h3>آب و زیرساخت</h3>
+<p>
+پیگیری مسائل مربوط به تأمین آب، شبکه توزیع و توسعه زیرساخت‌های
+ضروری شهر.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">🏗️</div>
+<h3>عمران شهری</h3>
+<p>
+توجه به معابر، پروژه‌های عمرانی، تجهیزات شهری و توسعه متوازن
+مناطق مختلف شهر.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">⚽</div>
+<h3>ورزش و جوانان</h3>
+<p>
+حمایت از ورزشکاران، توسعه فضاهای ورزشی و ایجاد فرصت‌های
+بیشتر برای جوانان.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">🏫</div>
+<h3>آموزش و مدارس</h3>
+<p>
+توجه به وضعیت مدارس و تلاش برای بهبود امکانات آموزشی
+دانش‌آموزان شهر.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">🌱</div>
+<h3>محیط زیست</h3>
+<p>
+پیگیری مسائل مربوط به پسماند، فاضلاب، آلودگی و حفظ طبیعت
+زیبای منطقه.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">🤝</div>
+<h3>ارتباط با مردم</h3>
+<p>
+شنیدن مشکلات شهروندان و تلاش برای پیگیری درخواست‌ها از
+مسیرهای قانونی و اداری.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">پروژه‌ها</div>
+<h2>پیگیری‌های عمرانی و شهری</h2>
+<p>
+این بخش می‌تواند در آینده با تصاویر و گزارش دقیق پروژه‌ها
+به‌روزرسانی شود.
+</p>
+</div>
+
+
+<div class="projects">
+
+<div class="project">
+<div class="project-img">💧</div>
+<div class="project-content">
+<h3>توسعه زیرساخت آب</h3>
+<p>
+پیگیری طرح‌ها و اقدامات مرتبط با تأمین آب پایدار و بهبود
+زیرساخت آبرسانی شهر.
+</p>
+</div>
+</div>
+
+
+<div class="project">
+<div class="project-img">⚽</div>
+<div class="project-content">
+<h3>توسعه امکانات ورزشی</h3>
+<p>
+حمایت از ایجاد و تکمیل فضاهای ورزشی برای جوانان و ورزشکاران
+شهر شاهو.
+</p>
+</div>
+</div>
+
+
+<div class="project">
+<div class="project-img">🏫</div>
+<div class="project-content">
+<h3>پیگیری وضعیت مدارس</h3>
+<p>
+توجه به زیرساخت‌های آموزشی و پیگیری مشکلات مدارس و فضاهای
+آموزشی شهر.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- NEWS -->
+<section id="news" style="background:#eef5f3;">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">اخبار و اطلاعیه‌ها</div>
+<h2>آخرین مطالب</h2>
+<p>
+اخبار و گزارش‌های فعالیت‌های رسمی در این بخش منتشر خواهد شد.
+</p>
+</div>
+
+
+<div class="news">
+
+<div class="news-card">
+<div class="news-date">اطلاعیه رسمی</div>
+<h3>پیگیری مطالبات شهروندان</h3>
+<p>
+تلاش برای انعکاس مشکلات و درخواست‌های شهروندان از مسیرهای
+قانونی و اداری.
+</p>
+</div>
+
+
+<div class="news-card">
+<div class="news-date">گزارش فعالیت</div>
+<h3>توسعه و آبادانی شاهو</h3>
+<p>
+پیگیری مسائل عمرانی و زیرساختی و تلاش برای جذب امکانات
+مورد نیاز شهر.
+</p>
+</div>
+
+
+<div class="news-card">
+<div class="news-date">ارتباط با مردم</div>
+<h3>شنیدن صدای شهروندان</h3>
+<p>
+پیشنهادها، انتقادات و درخواست‌های مردم بخش مهمی از مسیر
+خدمت و پیگیری خواهد بود.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">ارتباط</div>
+<h2>با من در ارتباط باشید</h2>
+<p>
+برای پیشنهاد، انتقاد، درخواست یا ارائه دیدگاه می‌توانید
+از راه‌های ارتباطی رسمی استفاده کنید.
+</p>
+</div>
+
+
+<div class="contact-grid">
+
+<div class="card">
+
+<h3>راه‌های ارتباطی</h3>
+
+<div class="contact-list">
+
+<div class="contact-item">
+<strong>📍 شهر</strong>
+<span>شاهو</span>
+</div>
+
+<div class="contact-item">
+<strong>📱 تلفن</strong>
+<span>اطلاعات تماس به‌زودی درج می‌شود</span>
+</div>
+
+<div class="contact-item">
+<strong>📧 ایمیل</strong>
+<span>ایمیل رسمی به‌زودی درج می‌شود</span>
+</div>
+
+<div class="contact-item">
+<strong>📱 شبکه‌های اجتماعی</strong>
+<span>لینک صفحات رسمی به‌زودی اضافه می‌شود</span>
+</div>
+
+</div>
+
+</div>
+
+
+<form class="form" onsubmit="sendMessage(event)">
+
+<div class="form-group">
+<label>نام شما</label>
+<input type="text" required placeholder="نام و نام خانوادگی">
+</div>
+
+<div class="form-group">
+<label>شماره تماس</label>
+<input type="tel" placeholder="شماره تماس">
+</div>
+
+<div class="form-group">
+<label>پیام</label>
+<textarea required placeholder="پیام، پیشنهاد یا درخواست خود را بنویسید..."></textarea>
+</div>
+
+<button class="btn btn-primary" type="submit">
+ارسال پیام
+</button>
+
+</form>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<h3>بهزاد حسینی</h3>
+<p>
+معلم، فعال اجتماعی و عضو شورای اسلامی شهر شاهو در دوره ششم.
+تلاش برای خدمت، پیگیری مطالبات مردم و توسعه شهر.
+</p>
+</div>
+
+<div>
+<h3>دسترسی سریع</h3>
+<div class="footer-links">
+<a href="#home">خانه</a>
+<a href="#about">درباره من</a>
+<a href="#activities">فعالیت‌ها</a>
+<a href="#projects">پروژه‌ها</a>
+</div>
+</div>
+
+<div>
+<h3>ارتباط</h3>
+<div class="footer-links">
+<a href="#contact">ارتباط با من</a>
+<a href="#news">اخبار و اطلاعیه‌ها</a>
+</div>
+</div>
+
+</div>
+
+<div class="copyright">
+© ۱۴۰۵ تمامی حقوق این وب‌سایت متعلق به بهزاد حسینی است.
+</div>
+
+</div>
+
+</footer>
+
+
+<button class="top" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+document.querySelectorAll(".menu a").forEach(function(link){
+    link.addEventListener("click",function(){
+        document.getElementById("menu").classList.remove("active");
+    });
+});
+
+window.addEventListener("scroll",function(){
+
+    const btn=document.getElementById("topBtn");
+
+    if(window.scrollY>500){
+        btn.style.display="block";
+    }else{
+        btn.style.display="none";
+    }
+
+});
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    alert("پیام شما ثبت شد. برای فعال شدن ارسال واقعی پیام، باید فرم به یک سرویس یا ایمیل متصل شود.");
+
+}
+
+</script>
+
+</body>
+    </html>
